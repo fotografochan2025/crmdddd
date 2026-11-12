@@ -1,0 +1,65 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-sans: "DM Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    background-color: #060908;
+    color: #f1f5f3;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+/* Subtle architectural grid and radial aura without static images */
+.bg-architectural-grid {
+  background-size: 48px 48px;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
+}
+
+.bg-dot-matrix {
+  background-image: radial-gradient(rgba(16, 185, 129, 0.16) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+@keyframes fiberPulse {
+  0% {
+    stroke-dashoffset: 360;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-fiber-stream {
+  stroke-dasharray: 42 318;
+  animation: fiberPulse 3.4s linear infinite;
+}
+
+.animate-fiber-stream-fast {
+  stroke-dasharray: 56 304;
+  animation: fiberPulse 2.3s linear infinite;
+}
+
+.animate-fiber-stream-slow {
+  stroke-dasharray: 32 328;
+  animation: fiberPulse 4.6s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fiber-stream,
+  .animate-fiber-stream-fast,
+  .animate-fiber-stream-slow {
+    animation: none;
+  }
+}

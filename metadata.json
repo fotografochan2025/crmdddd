@@ -1,0 +1,6 @@
+{
+  "name": "CRM MultiAtend — Plataforma Omnichannel",
+  "description": "Landing page interativa com scrollytelling para plataforma de multiatendimento inteligente no WhatsApp e Instagram, com Kanban ao vivo, construtor de fluxos e agendamento.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
